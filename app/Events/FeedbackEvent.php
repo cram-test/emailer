@@ -6,6 +6,10 @@ use Emailer\Role;
 use Emailer\User;
 use Illuminate\Contracts\Mail\Mailable;
 
+/**
+ * Class FeedbackEvent
+ * @package Emailer\Events
+ */
 class FeedbackEvent extends SenderEmailAbstract
 {
     /**

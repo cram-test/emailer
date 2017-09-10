@@ -4,6 +4,10 @@ namespace Emailer\Events;
 use Emailer\User;
 use Illuminate\Contracts\Mail\Mailable;
 
+/**
+ * Class UserRegisteredEvent
+ * @package Emailer\Events
+ */
 class UserRegisteredEvent extends SenderEmailAbstract
 {
     /**

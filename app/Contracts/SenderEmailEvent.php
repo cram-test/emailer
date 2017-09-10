@@ -2,7 +2,6 @@
 namespace Emailer\Contracts;
 
 /**
-
  * Interface SendEmail
  * @package Emailer\Contracts
  */
