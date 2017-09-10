@@ -5,8 +5,11 @@ namespace Emailer\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
+/**
+ * Class Feedback
+ * @package Emailer\Mail
+ */
 class Feedback extends Mailable
 {
     use Queueable, SerializesModels;

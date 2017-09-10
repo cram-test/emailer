@@ -46,6 +46,7 @@ abstract class SenderEmailAbstract implements SenderEmailEvent
         if (empty($this->eventId)) {
             throw new \Exception('Not registered event');
         }
+        $this->addRecipients();
         \Mail::send($this->mail);
     }
 

@@ -6,6 +6,10 @@ use Emailer\Role;
 use Emailer\User;
 use Illuminate\Contracts\Mail\Mailable;
 
+/**
+ * Class FeedbackEvent
+ * @package Emailer\Events
+ */
 class FeedbackEvent extends SenderEmailAbstract
 {
     /**
@@ -19,7 +23,7 @@ class FeedbackEvent extends SenderEmailAbstract
     protected function addRecipients()
     {
         $adminRole = Role::where('name', 'admin')->first();
-        foreach ($adminRole->users() as $recipient) {
+        foreach ($adminRole->users()->get() as $recipient) {
             $this->mail->to($recipient);
         }
     }

@@ -3,8 +3,14 @@
 namespace Emailer\Http\Controllers;
 
 use Emailer\Events\FeedbackEvent;
+use Emailer\Events\UserRegisteredEvent;
+use Emailer\User;
 use Illuminate\Http\Request;
 
+/**
+ * Class HomeController
+ * @package Emailer\Http\Controllers
+ */
 class HomeController extends Controller
 {
     /**
@@ -33,8 +39,19 @@ class HomeController extends Controller
      */
     public function feedback(Request $request)
     {
+        $this->validateFeedback($request);
         $this->sendFeedbackNotification($request);
-        return redirect()->back();
+        return redirect()->home();
+    }
+
+    /**
+     * @param Request $request
+     */
+    protected function validateFeedback(Request $request)
+    {
+        $this->validate($request, [
+            'feedback' => 'required'
+        ]);
     }
 
     /**
